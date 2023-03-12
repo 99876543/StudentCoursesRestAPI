@@ -7,7 +7,7 @@ pipeline {
       stage ('vcs') {
         steps {
             git url: 'https://github.com/khajadevopsmarch23/StudentCoursesRestAPI'
-              branch: 'develop'
+                branch: 'develop'
         }
       }
       stage('build') {
@@ -15,7 +15,7 @@ pipeline {
           sh 'docker image build -t syedadnan05/spc:latest .'
         }
       }
-      stage('scan and push')
+      stage('scan and push') {
         steps {
           sh 'echo docker image build -t syedadnan05/spc:latest .'
           sh 'docker image push syedadnan05/spc:latest'
